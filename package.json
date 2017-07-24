@@ -1,0 +1,18 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.29.0",
+    "mocha": "^3.4.2",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.6.1"
+  }
+}

@@ -1,13 +1,26 @@
-const assert = require('assert');
-import { module1 } from './module1';
+import { IncrementModule } from './incrementModule';
 
-describe('module1', function() {
-    describe('#getValue()', function() {
-        const module = module1();
-        let testNumber = 0;
+describe('IncrementModule', () => {
+    let incrementModule;
+    beforeEach(() => incrementModule = IncrementModule());
 
-        it('should return 0 if value was not incremented', function() {
-            assert.equal(testNumber, module.getValue());
+    describe('#getValue()', () => {
+        it('should return 0 as initial number of Incrementer', () => {
+            expect(incrementModule.getValue()).to.equal(0);
+        });
+    });
+
+    describe('#increase()', () => {
+        it('should increase number to 1 after incrementing', () => {
+            incrementModule.increase();
+            expect(incrementModule.getValue()).to.equal(1);
+        });
+
+        it('should correctly increment number', () => {
+            incrementModule.increase();
+            incrementModule.increase();
+            incrementModule.increase();
+            expect(incrementModule.getValue()).to.equal(3);
         });
     });
 });
